@@ -10,8 +10,8 @@ package Class;
  * @author dell
  */
 public class Mercado {
-    private int  semillasGrano =2500;
-    private int  semillasFruta=1000;
+    private int  semillasGrano =200;
+    private int  semillasFruta=100;
     private int hojasArbol = 2000;
     private int paja=2000;
     private int trigo=2000;
@@ -21,6 +21,8 @@ public class Mercado {
     private int insectos=500;
     private int consentrado= 800;
     private int sebada= 1750;
+    private int vaca=10;
+    private int gallinas=20;
     public Mercado(){
     
     }
@@ -82,7 +84,16 @@ public class Mercado {
     }
     
     public void restarSemillasFruta(int cantidad){
-        this.semillasFruta=this.semillasFruta+cantidad;
+        this.semillasFruta=this.semillasFruta-cantidad;
     }
+
+    public int getVaca() {
+        return vaca;
+    }
+
+    public int getGallinas() {
+        return gallinas;
+    }
+    
   
 }

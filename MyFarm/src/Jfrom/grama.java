@@ -157,6 +157,8 @@ public class grama extends javax.swing.JFrame {
         int x=Integer.parseInt(this.jLabel4.getText());
         int y=Integer.parseInt(this.jLabel5.getText()); 
         agua.mane.sembrarFruta(x, y);
+        tablero.jLabel9.setText(String.valueOf(tablero.granjero1.getOro()));
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -167,6 +169,8 @@ public class grama extends javax.swing.JFrame {
         int x=Integer.parseInt(this.jLabel4.getText());
         int y=Integer.parseInt(this.jLabel5.getText()); 
         agua.mane.sembrarGranos(x, y);
+        tablero.jLabel9.setText(String.valueOf(tablero.granjero1.getOro()));
+        this.setVisible(false);
         ///grano
     }//GEN-LAST:event_jButton1ActionPerformed
 

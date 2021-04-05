@@ -17,7 +17,7 @@ import javax.swing.JLabel;
  */
 public class agua extends javax.swing.JFrame {
     
- static ManejadorGranja mane=new ManejadorGranja(tablero.granjero1,tablero.granja1);
+ static ManejadorGranja mane=new ManejadorGranja(tablero.granjero1, tablero.granja1, tablero.Mer, tablero.Bod);
     
     
     public agua() {

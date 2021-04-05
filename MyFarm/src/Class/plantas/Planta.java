@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Class;
+package Class.plantas;
 
+import Class.Granja;
+import Class.Granjero;
 import Class.plantas.Frutas;
 import Class.plantas.Granos;
 import javax.swing.Icon;
@@ -15,7 +17,7 @@ import javax.swing.ImageIcon;
  * @author dell
  */
 public class Planta {
-    private int semillasFruta=50;
+    private int semillasFruta;
     private int semillasGranos=50;
     private Granjero granjero;
     private Granja granja;
@@ -30,28 +32,21 @@ public class Planta {
     }
     
     public void sembrarFruta(int semillas,int fila, int columna){
-        int semillasFruta=semillas;
-        if(semillasFruta>10){
-            Frutas fruta=new Frutas("Manzana",semillasFruta);
+       
+            Frutas fruta=new Frutas("Manzana",semillas);
             Icon imagenBarco=new ImageIcon(getClass().getResource("/imagenes/gramaFruto.jpg"));
             granja.getBotones()[fila][columna].setIcon(imagenBarco);
-                 
-        }
-        else {
-        // mercado
-        }   
+            
+         
     }
     
     public void sembrarGranos(int semillas, int fila, int columna){
-        int semillasGranos=semillas;
-        if(semillasGranos>=10){
+        
             Granos grano=new Granos("Maiz",semillasGranos);
             Icon imagenBarco=new ImageIcon(getClass().getResource("/imagenes/gramaGrano.jpg"));
             granja.getBotones()[fila][columna].setIcon(imagenBarco);
-        }
-        else {
-         //mercado
-        }
+        
+        
     }
 
     public int getSemillasFruta() {

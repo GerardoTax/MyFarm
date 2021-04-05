@@ -6,11 +6,14 @@
 package Jfrom;
 
 
+import Class.Bodega;
 import Class.Granja;
 import Class.Granjero;
+import Class.Mercado;
 import Manejadores.ManejadorGranja;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import java.applet.AudioClip;
 
 /**
  *
@@ -19,12 +22,16 @@ import javax.swing.ImageIcon;
 public class tablero extends javax.swing.JFrame {
     static Granjero granjero1=new Granjero(Inicio.nombre,Inicio.nick);
     static Granja granja1=new Granja();
-   
+    static Mercado Mer=new Mercado();
+    static Bodega Bod=new Bodega();
     
     public tablero() {
         initComponents();
         datosGranjero();
         granja1.botones();
+        AudioClip sonido;
+        sonido= java.applet.Applet.newAudioClip(getClass().getResource("/imagenes/sonido.wav"));
+        sonido.play();
         
         
       
