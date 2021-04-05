@@ -17,7 +17,7 @@ import javax.swing.JLabel;
  */
 public class agua extends javax.swing.JFrame {
     
- ManejadorGranja mane=new ManejadorGranja(tablero.granjero1,tablero.granja1);
+ static ManejadorGranja mane=new ManejadorGranja(tablero.granjero1,tablero.granja1);
     
     
     public agua() {
@@ -88,6 +88,7 @@ public class agua extends javax.swing.JFrame {
          mane.comprarBarcos(x, y);
         tablero.jLabel9.setText(String.valueOf(granjero1.getOro()));
         this.setVisible(false);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

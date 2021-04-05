@@ -18,7 +18,7 @@ public class Suelos  extends JButton  implements ActionListener {
     addActionListener(this);
     
     }
-    public void Camibiarnombre(int x,int y){
+    public void posicion(int x,int y){
     setText((x+1)+"-"+(y+1));
     
     }

@@ -7,6 +7,7 @@ package Manejadores;
 
 import Class.Granja;
 import Class.Granjero;
+import Class.Planta;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
@@ -35,6 +36,21 @@ public class ManejadorGranja extends Thread{
              }
              
              
+             
+    
+    }
+    public void sembrarFruta(int fila ,int columna){
+       
+        Planta planta=new Planta(granjero,granja);
+        planta.sembrarFruta(30, fila, columna);
+    
+    }
+    
+    public void sembrarGranos(int fila, int columna){
+        
+        Planta planta=new Planta(granjero,granja);
+        planta.sembrarGranos(30, fila, columna);
+    
     
     }
     

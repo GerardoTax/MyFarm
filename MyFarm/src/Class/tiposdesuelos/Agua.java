@@ -21,7 +21,7 @@ public class Agua extends Suelos {
         super(posx, posy, ancho, alto);
     }
     @Override
-     public void Camibiarnombre(int x,int y){
+     public void posicion(int x,int y){
          this.fila=x;
          this.columna=y;
     //setText((x+1)+"-"+(y+1));

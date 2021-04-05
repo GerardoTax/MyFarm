@@ -36,6 +36,7 @@ public class Granja {
                 //botones[i][j].Camibiarnombre(i, j);
                 if(numeroAleatorio<=40){
                     botones[i][j]=new Grama(110*j,110*i,100,100);
+                    botones[i][j].posicion(i, j);
                     Icon imag=new ImageIcon(getClass().getResource("/imagenes/s1.jpg"));
                     botones[i][j].setIcon(imag); 
                     tablero.jPanel1.add(botones[i][j]);
@@ -45,7 +46,7 @@ public class Granja {
                 
                 else if(numeroAleatorio<=75 && numeroAleatorio>40 ){
                     botones[i][j]=new Agua(110*j,110*i,100,100);
-                    botones[i][j].Camibiarnombre(i, j);
+                    botones[i][j].posicion(i, j);
                     Icon imag=new ImageIcon(getClass().getResource("/imagenes/s2.jpg"));
                     botones[i][j].setIcon(imag);
                     tablero.jPanel1.add(botones[i][j]);
@@ -56,9 +57,10 @@ public class Granja {
                 
                  else if(numeroAleatorio<=100 && numeroAleatorio>75 ){
                       botones[i][j]=new Desierto(110*j,110*i,100,100);
-                    Icon imag=new ImageIcon(getClass().getResource("/imagenes/s3.jpg"));
-                    botones[i][j].setIcon(imag); 
-                    tablero.jPanel1.add(botones[i][j]);
+                      botones[i][j].posicion(i, j);
+                      Icon imag=new ImageIcon(getClass().getResource("/imagenes/s3.jpg"));
+                      botones[i][j].setIcon(imag); 
+                      tablero.jPanel1.add(botones[i][j]);
                     
                     
                     

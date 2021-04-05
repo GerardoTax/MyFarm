@@ -15,13 +15,16 @@ import java.awt.event.ActionEvent;
  * @author dell
  */
 public class Grama extends Suelos{
-    
+    private int fila;
+    private int columna;
     public Grama(int posx, int posy, int ancho, int alto) {
         super(posx, posy, ancho, alto);
     }
     @Override
-     public void Camibiarnombre(int x,int y){
-    setText((x+1)+"-"+(y+1));
+     public void posicion(int x,int y){
+         this.fila=x;
+         this.columna=y;
+    //setText((x+1)+"-"+(y+1));
     
     }
 
@@ -29,8 +32,17 @@ public class Grama extends Suelos{
     public void actionPerformed(ActionEvent e) {
         grama gra=new grama();
         gra.setVisible(true);
-        
-        
-       
+        gra.jLabel4.setText(String.valueOf(this.fila));
+        gra.jLabel5.setText(String.valueOf(this.columna));
+  
     }
+
+    public int getFila() {
+        return fila;
+    }
+
+    public int getColumna() {
+        return columna;
+    }
+    
 }

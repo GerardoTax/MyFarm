@@ -13,13 +13,16 @@ import java.awt.event.ActionEvent;
  * @author dell
  */
 public class Desierto extends Suelos{
+    private int fila;
+    private int columna;
     
     public Desierto(int posx, int posy, int ancho, int alto) {
         super(posx, posy, ancho, alto);
     }
     @Override
-     public void Camibiarnombre(int x,int y){
-    setText((x+1)+"-"+(y+1));
+     public void posicion(int x,int y){
+         this.fila=x;
+         this.columna=y;
     
     }
 
