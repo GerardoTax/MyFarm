@@ -5,6 +5,7 @@
  */
 package Class.tiposdesuelos;
 
+import Enum.TiposSuelos;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,6 +13,7 @@ import javax.swing.JButton;
 import static javax.swing.text.StyleConstants.setBackground;
 
 public class Suelos  extends JButton  implements ActionListener {
+    private TiposSuelos estado;
     
     public Suelos(int posx, int posy ,int ancho  ,int alto   ){
     super.setBounds(posx, posy, ancho, alto);
@@ -27,6 +29,14 @@ public class Suelos  extends JButton  implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         setBackground(Color.PINK);
         
+    }
+
+    public TiposSuelos getEstado() {
+        return estado;
+    }
+
+    public void setEstado(TiposSuelos estado) {
+        this.estado = estado;
     }
     
     

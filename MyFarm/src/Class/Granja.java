@@ -7,19 +7,21 @@ package Class;
 import Class.tiposdesuelos.Agua;
 import Class.tiposdesuelos.Desierto;
 import Class.tiposdesuelos.Grama;
+import Class.tiposdesuelos.Parcela;
 import Class.tiposdesuelos.Suelos;
 import Enum.TiposSuelos;
 import Jfrom.agua;
 import Jfrom.tablero;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author dell
  */
 public class Granja {
-    final int CANTIDAD_BOTONES=5;
+    private int CANTIDAD_BOTONES=5;
     private Suelos [][] botones;
     public Granja(){
     
@@ -40,9 +42,8 @@ public class Granja {
                     Icon imag=new ImageIcon(getClass().getResource("/imagenes/s1.jpg"));
                     botones[i][j].setIcon(imag); 
                     tablero.jPanel1.add(botones[i][j]);
-                  
-                }
-                
+                    botones[i][j].setEstado(TiposSuelos.GRAMA);
+                  }
                 
                 else if(numeroAleatorio<=75 && numeroAleatorio>40 ){
                     botones[i][j]=new Agua(110*j,110*i,100,100);
@@ -50,24 +51,17 @@ public class Granja {
                     Icon imag=new ImageIcon(getClass().getResource("/imagenes/s2.jpg"));
                     botones[i][j].setIcon(imag);
                     tablero.jPanel1.add(botones[i][j]);
-                   // botones[i][j].setEstadoSuelo(TiposSuelos.AGUA);
-                   
+                    botones[i][j].setEstado(TiposSuelos.AGUA); 
                 }
-                
                 
                  else if(numeroAleatorio<=100 && numeroAleatorio>75 ){
-                      botones[i][j]=new Desierto(110*j,110*i,100,100);
-                      botones[i][j].posicion(i, j);
-                      Icon imag=new ImageIcon(getClass().getResource("/imagenes/s3.jpg"));
-                      botones[i][j].setIcon(imag); 
-                      tablero.jPanel1.add(botones[i][j]);
-                    
-                    
-                    
-                }
-                
-        
-        
+                        botones[i][j]=new Desierto(110*j,110*i,100,100);
+                        botones[i][j].posicion(i, j);
+                        Icon imag=new ImageIcon(getClass().getResource("/imagenes/s3.jpg"));
+                        botones[i][j].setIcon(imag); 
+                        tablero.jPanel1.add(botones[i][j]);
+                        botones[i][j].setEstado(TiposSuelos.DESIERTO);
+                   }
             }
         
         }
@@ -85,14 +79,27 @@ public class Granja {
 
 
     public void comprarTierras(){
-        //Icon imag=new ImageIcon(getClass().getResource("/imagenes/gpollo.jpg"));
-                    //botones[0][0].setIcon(imag); 
-                    //granjero.sumarOro(20);
-                    //tablero.jLabel9.setText();
+        this.CANTIDAD_BOTONES=this.CANTIDAD_BOTONES+1;
   
-                    
-    
     }
+    
+   public void crearparcela(int fila, int columna){
+       
+       if(botones[fila][columna+1].getEstado()==botones[fila][columna].getEstado()){
+            botones[fila][columna+1].setVisible(false );
+            botones[fila][columna].setVisible(false );
+            botones[fila][columna]=new Parcela(110*columna,110*fila,210,100);
+            botones[fila][columna].posicion(fila, columna);
+            tablero.jPanel1.add(botones[fila][columna]);
+            Icon imag=new ImageIcon(getClass().getResource("/imagenes/parcela.jpg"));
+            botones[fila][columna].setIcon(imag);
+            
+        }
+       
+       else {
+           JOptionPane.showMessageDialog(null, "no se pudo realizar ");
+       }
+   }
    
     
     

@@ -7,6 +7,7 @@ package Jfrom;
 
 
 import Class.Bodega;
+import Class.Datos;
 import Class.Granja;
 import Class.Granjero;
 import Class.Mercado;
@@ -24,6 +25,7 @@ public class tablero extends javax.swing.JFrame {
     static Granja granja1=new Granja();
     static Mercado Mer=new Mercado();
     static Bodega Bod=new Bodega();
+    static Datos dato=new Datos();
     
     public tablero() {
         initComponents();
@@ -92,15 +94,15 @@ public class tablero extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 650, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 560, -1, -1));
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Cerrar ");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 650, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 500, -1, -1));
 
         jLabel4.setText("Nick:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
@@ -137,20 +139,25 @@ public class tablero extends javax.swing.JFrame {
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 200, 90, 80));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/datos.jpg"))); // NOI18N
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 310, 80, 100));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 790, 690));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 790, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
+            
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -162,6 +169,11 @@ public class tablero extends javax.swing.JFrame {
         bodega bod=new bodega();
         bod.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        datos dat=new datos();
+        dat.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
    
 

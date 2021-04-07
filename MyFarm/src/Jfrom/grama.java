@@ -16,7 +16,7 @@ import javax.swing.ImageIcon;
 public class grama extends javax.swing.JFrame {
     
         
-    
+        
    
     public grama() {
         initComponents();
@@ -25,6 +25,8 @@ public class grama extends javax.swing.JFrame {
         this.jCheckBox2.setVisible(false);
         this.jButton2.setVisible(false);
         this.jButton1.setVisible(false);
+        
+        
     }
 
     /**
@@ -162,7 +164,13 @@ public class grama extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        int x=Integer.parseInt(this.jLabel4.getText());
+        int y=Integer.parseInt(this.jLabel5.getText());
         this.jButton4.setVisible(false);
+        this.jLabel2.setVisible(false);
+        agua.mane.crearparcela(x, y);
+        this.setVisible(false);
+        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -192,6 +200,6 @@ public class grama extends javax.swing.JFrame {
     public static javax.swing.JLabel jLabel4;
     public static javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
-
+    
     
 }

@@ -5,38 +5,34 @@
  */
 package Class.tiposdesuelos;
 
-import Enum.TiposSuelos;
-import Jfrom.agua;
-import java.awt.Color;
+import Jfrom.animales;
+import Jfrom.grama;
 import java.awt.event.ActionEvent;
 
 /**
  *
  * @author dell
  */
-public class Agua extends Suelos {
-    private int fila;
-    private int columna;
-    
-    
-    public Agua(int posx, int posy, int ancho, int alto) {
+public class Parcela extends Suelos {
+     private int fila ;
+     private int columna;        
+    public Parcela(int posx, int posy, int ancho, int alto) {
         super(posx, posy, ancho, alto);
-        
     }
-    @Override
+     @Override
      public void posicion(int x,int y){
          this.fila=x;
          this.columna=y;
     //setText((x+1)+"-"+(y+1));
     
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        agua agu =new agua();
-        agu.jLabel3.setText(String.valueOf(fila));
-        agua.jLabel4.setText(String.valueOf(columna));
-        agu.setVisible(true);
-        
+        animales ani=new animales();
+        ani.setVisible(true);
+        ani.jLabel1.setText(String.valueOf(this.fila));
+        ani.jLabel2.setText(String.valueOf(this.columna));
     }
 
     public int getFila() {
@@ -46,7 +42,5 @@ public class Agua extends Suelos {
     public int getColumna() {
         return columna;
     }
-
-   
     
 }
