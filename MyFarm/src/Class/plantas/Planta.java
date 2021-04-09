@@ -11,6 +11,7 @@ import Class.plantas.Frutas;
 import Class.plantas.Granos;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,7 +24,7 @@ public class Planta {
     private Granja granja;
    
     
-    public Planta(Granjero granjero, Granja granja){
+    public Planta(Granjero granjero, Granja granja) {
         
         this.granjero=granjero;
         this.granja=granja;
@@ -36,6 +37,10 @@ public class Planta {
             Frutas fruta=new Frutas("Manzana",semillas);
             Icon imagenBarco=new ImageIcon(getClass().getResource("/imagenes/gramaFruto.jpg"));
             granja.getBotones()[fila][columna].setIcon(imagenBarco);
+            Thread hilo =new Thread(fruta);
+                   hilo.start();
+             
+           
             
          
     }

@@ -97,7 +97,7 @@ public class agua extends javax.swing.JFrame {
 
         int x=Integer.parseInt(this.jLabel3.getText());
         int y=Integer.parseInt(this.jLabel4.getText());
-         mane.comprarBarcos(x, y);
+        mane.comprarBarcos(x, y);
         tablero.jLabel9.setText(String.valueOf(granjero1.getOro()));
         this.setVisible(false);
         

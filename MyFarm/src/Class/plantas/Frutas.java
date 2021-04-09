@@ -5,18 +5,22 @@
  */
 package Class.plantas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author dell
  */
-public class Frutas  {
+public class Frutas extends Thread  {
     private String  nombre;
     private int semillasPlantar ;
     private int CanitidadManzanas;
+    private int vidaFruto;
     
     public Frutas(String nombre, int semillasPlantar) {
         this.nombre=nombre;
         this.semillasPlantar=semillasPlantar;
+        this.vidaFruto=5;
        
     }
 
@@ -36,6 +40,10 @@ public class Frutas  {
         this.nombre = nombre;
     }
 
+    public int getVidaFruto() {
+        return vidaFruto;
+    }
+    
     public void setSemillasPlantar(int semillasPlantar) {
         this.semillasPlantar = semillasPlantar;
     }
@@ -44,6 +52,30 @@ public class Frutas  {
         this.CanitidadManzanas = CanitidadManzanas;
     }
     
-   
-     
+    public void cosechar() throws InterruptedException{
+        while(this.CanitidadManzanas !=5){
+             this.sleep(2000);
+             this.CanitidadManzanas=this.CanitidadManzanas+1;
+            JOptionPane.showMessageDialog(null,this.CanitidadManzanas);
+            
+             
+        }
+        JOptionPane.showMessageDialog(null,"se murio");
+        
+    }
+    
+    
+    
+    
+    @Override
+    public void run(){
+        try{
+            
+           cosechar();
+           
+        }catch(InterruptedException e){
+            System.out.println("error al procesar");
+            e.printStackTrace();
+        }
+    }
 }

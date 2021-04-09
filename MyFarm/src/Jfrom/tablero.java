@@ -26,14 +26,16 @@ public class tablero extends javax.swing.JFrame {
     static Mercado Mer=new Mercado();
     static Bodega Bod=new Bodega();
     static Datos dato=new Datos();
-    
-    public tablero() {
+    Thread hila1 = new Thread(agua.mane);
+    public tablero()  {
         initComponents();
         datosGranjero();
         granja1.botones();
         AudioClip sonido;
         sonido= java.applet.Applet.newAudioClip(getClass().getResource("/imagenes/sonido.wav"));
         sonido.play();
+        hila1.start();
+        
         
         
       
@@ -189,7 +191,7 @@ public class tablero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    public static javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     public static javax.swing.JLabel jLabel9;
     public static javax.swing.JPanel jPanel1;

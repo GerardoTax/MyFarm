@@ -13,6 +13,7 @@ import Class.Granjero;
 import Class.Mercado;
 import Class.plantas.Planta;
 import Jfrom.bodega;
+import Jfrom.tablero;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -37,12 +38,12 @@ public class ManejadorGranja extends Thread{
         this.dato=dato;
     }
    
-    public void comprarBarcos(int fila ,int columna)  {
+    public void comprarBarcos(int fila ,int columna){
         
                 if(granjero.getOro()>=500){
                     granjero.RestarOro(500);
                     Icon imagenBarco=new ImageIcon(getClass().getResource("/imagenes/pescando.jpg"));
-                    granja.getBotones()[fila][columna].setIcon(imagenBarco);
+                    granja.getBotones()[fila][columna].setIcon(imagenBarco);   
                 }
              
              else 
@@ -122,6 +123,27 @@ public class ManejadorGranja extends Thread{
             cri.criarGallinas(fila, columna);
         }
         else JOptionPane.showMessageDialog(null, " oro insuficiente  ");
+    }
+    public void vidaGranjero() throws InterruptedException{
+        while(granjero.getVida() !=0){
+            granjero.restarVida(1);
+            this.sleep(5000);
+            tablero.jLabel7.setText(String.valueOf(granjero.getVida()));
+        
+        }
+    }
+    
+    
+    @Override
+    public void run(){
+        try{
+            vidaGranjero();
+        }catch(InterruptedException e){
+            System.out.println("error al procesar");
+            e.printStackTrace();
+        }
+        
+    
     }
     
     
