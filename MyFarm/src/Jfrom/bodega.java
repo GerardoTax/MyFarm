@@ -19,6 +19,7 @@ public class bodega extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         botones();
+        this.jButton2.setVisible(false);
     }
 
     /**
@@ -45,6 +46,8 @@ public class bodega extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -82,6 +85,11 @@ public class bodega extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setText("Granos");
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -90,6 +98,11 @@ public class bodega extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setText("Frutos");
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -114,14 +127,25 @@ public class bodega extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setText("0");
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, -1, -1));
 
+        jButton2.setText("Vender");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, -1, -1));
+
+        jButton3.setText("consumir");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 400, 300));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 390, 340));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Alimentos ");
@@ -134,6 +158,19 @@ public class bodega extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        this.jButton2.setVisible(true);
+    }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+         this.jButton2.setVisible(true);
+    }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        tablero.granjero1.sumarVida(20);
+        tablero.jLabel7.setText(String.valueOf(tablero.granjero1.getVida()));
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -141,6 +178,8 @@ public class bodega extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -162,11 +201,10 @@ public class bodega extends javax.swing.JFrame {
     public void botones(){
         
         this.jLabel13.setText(String.valueOf(tablero.Bod.getFrutas()));
-        //this.jLabel14.setText(String.valueOf(bod.getGranos()));
-        //this.jLabel16.setText(String.valueOf(bod.getPiezaCuero()));
-        //bod.setCarne(50);
-        //this.jLabel15.setText(String.valueOf(bod.getCarne()));
-        //this.jLabel17.setText(String.valueOf(bod.getHuevo()));
+        this.jLabel14.setText(String.valueOf(tablero.Bod.getGranos()));
+        this.jLabel16.setText(String.valueOf(tablero.Bod.getPiezaCuero()));
+        this.jLabel15.setText(String.valueOf(tablero.Bod.getCarne()));
+        this.jLabel17.setText(String.valueOf(tablero.Bod.getHuevo()));
     
     }
 }

@@ -55,7 +55,7 @@ public class ManejadorGranja extends Thread{
         
         if(bode.getFrutas()>=10){
             bode.restarFruta(10);
-            Planta planta=new Planta(granjero,granja);
+            Planta planta=new Planta(granjero,granja, bode,dato);
             planta.sembrarFruta(bode.getFrutas(), fila, columna);  
             dato.sumarCeldasSembradas();
         }
@@ -66,7 +66,7 @@ public class ManejadorGranja extends Thread{
                  granjero.RestarOro(45);
                  dato.Sumarsemilas(10);
                  mercado.restarSemillasFruta(10);
-                 Planta planta=new Planta(granjero,granja);
+                 Planta planta=new Planta(granjero,granja,bode,dato);
                  planta.sembrarFruta(bode.getFrutas(), fila, columna);
                  dato.sumarCeldasSembradas();
             }  
@@ -78,9 +78,10 @@ public class ManejadorGranja extends Thread{
         
         if(bode.getGranos()>=10){
             bode.restarGrano(10);
-            Planta planta=new Planta(granjero,granja);
+            Planta planta=new Planta(granjero,granja,bode,dato);
             planta.sembrarGranos(bode.getGranos(), fila, columna);
             dato.sumarCeldasSembradas();
+           
        
         }
         else if (granjero.getOro()>=30){
@@ -89,9 +90,10 @@ public class ManejadorGranja extends Thread{
                 granjero.RestarOro(30);
                 dato.Sumarsemilas(10);
                 mercado.restarsemillasGrano(10);
-                Planta planta=new Planta(granjero,granja);
+                Planta planta=new Planta(granjero,granja,bode,dato);
                 planta.sembrarGranos(bode.getGranos(), fila, columna);
                 dato.sumarCeldasSembradas();
+                
             }
         }
         else JOptionPane.showMessageDialog(null, "oro insuficiente  ");
@@ -144,6 +146,9 @@ public class ManejadorGranja extends Thread{
         }
         
     
+    }
+    public void destazar(){
+        bode.sumarCarne(10);
     }
     
     

@@ -72,5 +72,8 @@ public class Bodega {
     public void sumarGrano(int cantidad){
         this.granos=this.granos+cantidad;
     }
+    public void sumarCarne(int cantidad){
+        this.carne=this.carne+cantidad;
+    }
     
 }

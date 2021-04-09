@@ -77,4 +77,11 @@ public class Datos {
     public void sumarCeldasSembradas(){
         this.cantidadSembrado++;
     }
+    public void sumarCeldasCompradas(int cantidad){
+        this.cantidadCeldasCompradas=this.cantidadCeldasCompradas+cantidad;
+    }
+    
+    public void sumarAlimentosGeneradoGranja(int cantidad){
+    this.alimentosGeneradoGranja=this.alimentosGeneradoGranja+cantidad;
+    }
 }

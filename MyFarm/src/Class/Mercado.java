@@ -23,6 +23,8 @@ public class Mercado {
     private int sebada= 1750;
     private int vaca=10;
     private int gallinas=20;
+    private int granos=5;
+    private int fruta=10;
     public Mercado(){
     
     }
@@ -93,6 +95,14 @@ public class Mercado {
 
     public int getGallinas() {
         return gallinas;
+    }
+
+    public int getGranos() {
+        return granos;
+    }
+
+    public int getFruta() {
+        return fruta;
     }
     
   

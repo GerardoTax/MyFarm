@@ -5,6 +5,8 @@
  */
 package Class.plantas;
 
+import Class.Bodega;
+import Class.Datos;
 import Class.Granja;
 import Class.Granjero;
 import Class.plantas.Frutas;
@@ -22,12 +24,16 @@ public class Planta {
     private int semillasGranos=50;
     private Granjero granjero;
     private Granja granja;
+    private Bodega bodega;
+    private Datos dato;
    
     
-    public Planta(Granjero granjero, Granja granja) {
+    public Planta(Granjero granjero, Granja granja, Bodega bodega, Datos dato) {
         
         this.granjero=granjero;
         this.granja=granja;
+        this.bodega=bodega;
+        this.dato=dato;
    
    
     }
@@ -47,9 +53,12 @@ public class Planta {
     
     public void sembrarGranos(int semillas, int fila, int columna){
         
-            Granos grano=new Granos("Maiz",semillasGranos);
+            Granos grano=new Granos("Maiz",semillasGranos,bodega,dato);
             Icon imagenBarco=new ImageIcon(getClass().getResource("/imagenes/gramaGrano.jpg"));
             granja.getBotones()[fila][columna].setIcon(imagenBarco);
+            Thread hilo =new Thread(grano);
+                   hilo.start();
+            
         
         
     }
