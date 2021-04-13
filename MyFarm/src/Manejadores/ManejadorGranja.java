@@ -14,6 +14,7 @@ import Class.Mercado;
 import Class.plantas.Planta;
 import Jfrom.bodega;
 import Jfrom.tablero;
+import static java.awt.image.ImageObserver.WIDTH;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -77,7 +78,7 @@ public class ManejadorGranja extends Thread{
     public void sembrarGranos(int fila, int columna){
         
         if(bode.getGranos()>=10){
-            bode.restarGrano(10);
+            bode.restarGrano(5);
             Planta planta=new Planta(granjero,granja,bode,dato);
             planta.sembrarGranos(bode.getGranos(), fila, columna);
             dato.sumarCeldasSembradas();
@@ -88,7 +89,7 @@ public class ManejadorGranja extends Thread{
             int resp = JOptionPane.showConfirmDialog( null, "Quiere comprar semillas de Grano a 30 ?" , "Confirmación" , JOptionPane.YES_NO_OPTION ); 
             if( resp == JOptionPane.YES_OPTION ){
                 granjero.RestarOro(30);
-                dato.Sumarsemilas(10);
+                dato.Sumarsemilas(5);
                 mercado.restarsemillasGrano(10);
                 Planta planta=new Planta(granjero,granja,bode,dato);
                 planta.sembrarGranos(bode.getGranos(), fila, columna);
@@ -111,7 +112,7 @@ public class ManejadorGranja extends Thread{
         if(granjero.getOro()>=500){
             granjero.RestarOro(500);
             dato.sumarVacas(2);
-            Crianza cri=new Crianza(granjero, granja);
+            Crianza cri=new Crianza(granjero, granja,bode,dato);
             cri.criarVaca(fila, columna);
         }
         else JOptionPane.showMessageDialog(null, "oro insuficiente  ");
@@ -121,7 +122,7 @@ public class ManejadorGranja extends Thread{
         if(granjero.getOro()>=120){
             granjero.RestarOro(120);
             dato.sumarGallinas(4);
-            Crianza cri=new Crianza(granjero, granja);
+            Crianza cri=new Crianza(granjero, granja,bode,dato);
             cri.criarGallinas(fila, columna);
         }
         else JOptionPane.showMessageDialog(null, " oro insuficiente  ");
@@ -129,10 +130,12 @@ public class ManejadorGranja extends Thread{
     public void vidaGranjero() throws InterruptedException{
         while(granjero.getVida() !=0){
             granjero.restarVida(1);
-            this.sleep(5000);
+            this.sleep(10000);
             tablero.jLabel7.setText(String.valueOf(granjero.getVida()));
         
         }
+        JOptionPane.showMessageDialog(null, "Lo sentimos el granjero a muerto por lo tanto ya no puede seguir jugando");
+        System.exit(WIDTH);
     }
     
     
@@ -144,9 +147,8 @@ public class ManejadorGranja extends Thread{
             System.out.println("error al procesar");
             e.printStackTrace();
         }
-        
-    
     }
+    
     public void destazar(){
         bode.sumarCarne(10);
     }

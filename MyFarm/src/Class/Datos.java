@@ -84,4 +84,13 @@ public class Datos {
     public void sumarAlimentosGeneradoGranja(int cantidad){
     this.alimentosGeneradoGranja=this.alimentosGeneradoGranja+cantidad;
     }
+    
+    public void sumarOroVenta(int cantidad){
+        this.OroGeneradoGranja=this.OroGeneradoGranja+cantidad;
+    }
+    
+    public void alimetosConsumido(int cantidad){
+        this.alimentosConsumidos=this.alimentosConsumidos+cantidad;
+    }
+    
 }

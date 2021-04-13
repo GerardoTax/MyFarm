@@ -13,7 +13,7 @@ public interface Omnivoros {
     
     public int comerInsecto(int cantidad);
     public void comerConsentrado();
-    public void comersebada();
+    public void comerSebada();
     
     
     

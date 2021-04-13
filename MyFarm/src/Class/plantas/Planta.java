@@ -40,7 +40,7 @@ public class Planta {
     
     public void sembrarFruta(int semillas,int fila, int columna){
        
-            Frutas fruta=new Frutas("Manzana",semillas);
+            Frutas fruta=new Frutas("Manzana",semillas,bodega,dato, fila ,columna,granja);
             Icon imagenBarco=new ImageIcon(getClass().getResource("/imagenes/gramaFruto.jpg"));
             granja.getBotones()[fila][columna].setIcon(imagenBarco);
             Thread hilo =new Thread(fruta);
@@ -53,7 +53,7 @@ public class Planta {
     
     public void sembrarGranos(int semillas, int fila, int columna){
         
-            Granos grano=new Granos("Maiz",semillasGranos,bodega,dato);
+            Granos grano=new Granos("Maiz",semillasGranos,bodega,dato,granja, fila,columna);
             Icon imagenBarco=new ImageIcon(getClass().getResource("/imagenes/gramaGrano.jpg"));
             granja.getBotones()[fila][columna].setIcon(imagenBarco);
             Thread hilo =new Thread(grano);

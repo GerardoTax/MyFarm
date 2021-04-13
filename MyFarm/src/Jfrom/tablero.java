@@ -7,6 +7,7 @@ package Jfrom;
 
 
 import Class.Bodega;
+import Class.Cronometro;
 import Class.Datos;
 import Class.Granja;
 import Class.Granjero;
@@ -15,6 +16,7 @@ import Manejadores.ManejadorGranja;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.applet.AudioClip;
+import javax.swing.Timer;
 
 /**
  *
@@ -24,9 +26,12 @@ public class tablero extends javax.swing.JFrame {
     static Granjero granjero1=new Granjero(Inicio.nombre,Inicio.nick);
     static Granja granja1=new Granja();
     static Mercado Mer=new Mercado();
-    static Bodega Bod=new Bodega();
     static Datos dato=new Datos();
+    static Bodega Bod=new Bodega(granjero1,dato,Mer);
     Thread hila1 = new Thread(agua.mane);
+    Cronometro cro=new Cronometro();
+    Thread hila2 = new Thread(cro);
+    
     public tablero()  {
         initComponents();
         datosGranjero();
@@ -35,6 +40,9 @@ public class tablero extends javax.swing.JFrame {
         sonido= java.applet.Applet.newAudioClip(getClass().getResource("/imagenes/sonido.wav"));
         sonido.play();
         hila1.start();
+        hila2.start();
+       
+            
         
         
         
@@ -68,6 +76,7 @@ public class tablero extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -174,6 +183,10 @@ public class tablero extends javax.swing.JFrame {
         jLabel14.setText("Reporte");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 70, -1));
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setText("jLabel10");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 640));
 
@@ -181,7 +194,8 @@ public class tablero extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.dispose();
+        
+        System.exit(WIDTH);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -214,6 +228,7 @@ public class tablero extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    public static javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;

@@ -5,6 +5,8 @@
  */
 package Class.Animales;
 
+import Class.Bodega;
+import Class.Datos;
 import Class.Granja;
 import Class.Granjero;
 import javax.swing.Icon;
@@ -17,10 +19,14 @@ import javax.swing.ImageIcon;
 public class Crianza {
     private Granjero granjero;
     private Granja granja;
+    private Bodega bodega;
+    private Datos datos;
     
-    public  Crianza(Granjero granjero, Granja granja){
+    public  Crianza(Granjero granjero, Granja granja,Bodega bodega, Datos datos){
         this.granjero=granjero;
         this.granja=granja;
+        this.bodega=bodega;
+        this.datos=datos;
     }
     
     
@@ -33,7 +39,7 @@ public class Crianza {
     }
     public void criarGallinas(int fila , int columna){
       
-        Gallina gallina=new Gallina("Gallina");
+        Gallina gallina=new Gallina("Gallina",bodega,datos);
         Icon imagenGallina=new ImageIcon(getClass().getResource("/imagenes/parcelaGallinas.jpg"));
         granja.getBotones()[fila][columna].setIcon(imagenGallina);
     }

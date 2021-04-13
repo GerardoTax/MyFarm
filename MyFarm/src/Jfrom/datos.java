@@ -21,6 +21,9 @@ public class datos extends javax.swing.JFrame {
         this.jLabel22.setText(String.valueOf(tablero.dato.getCantidadSembrado()));
         this.jLabel23.setText(String.valueOf(tablero.dato.getCantidadCeldasCompradas()));
         this.jLabel27.setText((String.valueOf(tablero.dato.getAlimentosGeneradoGranja())));
+        this.jLabel25.setText(tablero.jLabel10.getText());
+        this.jLabel26.setText(String.valueOf(tablero.dato.getOroGeneradoGranja()));
+        this.jLabel24.setText(String.valueOf(tablero.dato.getAlimentosConsumidos()));
     }
 
     /**
@@ -170,8 +173,8 @@ public class datos extends javax.swing.JFrame {
         getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, -1, -1));
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel26.setText("0");
-        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 10, -1));
+        jLabel26.setText("hhjh");
+        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 40, -1));
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel27.setText("0");

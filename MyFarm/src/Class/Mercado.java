@@ -72,7 +72,22 @@ public class Mercado {
     public int getSebada() {
         return sebada;
     }
+   public int getVaca() {
+        return vaca;
+    }
 
+    public int getGallinas() {
+        return gallinas;
+    }
+
+    public int getGranos() {
+        return granos;
+    }
+
+    public int getFruta() {
+        return fruta;
+    }
+    
     public void sumarSemillasGrano(int cantidad){
         
         this.semillasGrano=this.semillasGrano+cantidad;
@@ -88,22 +103,14 @@ public class Mercado {
     public void restarSemillasFruta(int cantidad){
         this.semillasFruta=this.semillasFruta-cantidad;
     }
-
-    public int getVaca() {
-        return vaca;
+    public void sumarFrutos(int cantidad){
+        this.fruta=this.fruta+cantidad;
+    }
+    public void sumarGranos(int cantidad){
+        this.granos=this.granos+cantidad;
     }
 
-    public int getGallinas() {
-        return gallinas;
-    }
-
-    public int getGranos() {
-        return granos;
-    }
-
-    public int getFruta() {
-        return fruta;
-    }
+ 
     
   
 }
