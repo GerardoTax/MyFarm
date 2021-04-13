@@ -12,11 +12,12 @@ import Jfrom.tablero;
  * @author dell
  */
 public class Cronometro extends  Thread {
+    //atributos
     private int hora;
     private int minuto;
     private int segundo;
     
-    
+    //metodo en donde se suma para llevar el tiempo de la partida
     public void iniciarCronometro() throws InterruptedException{
         for(hora=0; hora<60; hora++){
             for(minuto=0; minuto<60; minuto++){
@@ -31,6 +32,7 @@ public class Cronometro extends  Thread {
     
     
     }
+    //metodo sobre escrito de Thred
      
     @Override
     public void run(){

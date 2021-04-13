@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
  * @author dell
  */
 public class Granja {
+    //cantidad de celdas generadas 
     private int CANTIDAD_BOTONES=10;
     private int filax=5;
     private int columnay=5;
@@ -30,6 +31,7 @@ public class Granja {
     botones=new Suelos[CANTIDAD_BOTONES][CANTIDAD_BOTONES];
     
     }
+        //en este metedo es donde se crean los diferentes tipos de suelos 
     public void botones(){
         for(int i=0;i<columnay;i++){
             
@@ -79,7 +81,7 @@ public class Granja {
 
 
    
-    
+    // metodo en donde se crea una parcela solo necesita su cordenada 
    public void crearparcela(int fila, int columna){
        
        if(botones[fila][columna+1].getEstado()==botones[fila][columna].getEstado()){
@@ -121,6 +123,7 @@ public class Granja {
                 }
                 
                 tablero.jPanel1.add(botones[datos.getCantidadCeldasCompradas()][5]);
+                // codigo para actualizar 
                 tablero.jPanel1.updateUI();
                 datos.sumarCeldasCompradas(1);
             }

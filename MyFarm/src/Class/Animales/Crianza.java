@@ -9,6 +9,7 @@ import Class.Bodega;
 import Class.Datos;
 import Class.Granja;
 import Class.Granjero;
+import Jfrom.animales;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
@@ -43,4 +44,5 @@ public class Crianza {
         Icon imagenGallina=new ImageIcon(getClass().getResource("/imagenes/parcelaGallinas.jpg"));
         granja.getBotones()[fila][columna].setIcon(imagenGallina);
     }
+
 }

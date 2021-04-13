@@ -10,20 +10,22 @@ package Class;
  * @author dell
  */
 public class Datos {
+    //atributos
     private int tiempoPartida;
     private int OroGeneradoGranja;
     private int alimentosGeneradoGranja;
     private int alimentosConsumidos;
     private int cantidadCeldasCompradas;
     private int cantidadCriasCompradasVaca;
-     private int cantidadCriasCompradasGallina;
-    private int cantidadDestace;
+    private int cantidadCriasCompradasGallina;
+    private int cantidadDestacevaca;
+    private int cantidadDestaceGallinas;
     private int cantidadSemillas;
     private int cantidadSembrado;
     public Datos(){
     
     }
-    
+    //cada abributo tiene su metodo get y set
     public int getTiempoPartida() {
         return tiempoPartida;
     }
@@ -48,8 +50,12 @@ public class Datos {
         return cantidadCriasCompradasVaca;
     }
 
-    public int getCantidadDestace() {
-        return cantidadDestace;
+    public int getCantidadDestacevaca() {
+        return cantidadDestacevaca;
+    }
+
+    public int getCantidadDestaceGallinas() {
+        return cantidadDestaceGallinas;
     }
 
     public int getCantidadSemillas() {
@@ -74,6 +80,7 @@ public class Datos {
         this.cantidadCriasCompradasGallina=this.cantidadCriasCompradasGallina+cantidad;
     }
     
+    //metodo sumar y restar para cada aributo
     public void sumarCeldasSembradas(){
         this.cantidadSembrado++;
     }
@@ -93,4 +100,11 @@ public class Datos {
         this.alimentosConsumidos=this.alimentosConsumidos+cantidad;
     }
     
+    public void sumardestaceVaca(int cantidad){
+        this.cantidadDestacevaca=this.cantidadDestacevaca+cantidad;
+    } 
+    
+    public void sumardestaceGallina(int cantidad){
+        this.cantidadDestaceGallinas=this.cantidadDestaceGallinas+cantidad;
+    }
 }

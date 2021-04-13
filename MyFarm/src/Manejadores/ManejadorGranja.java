@@ -5,13 +5,16 @@
  */
 package Manejadores;
 
+import Class.Animales.Animal;
 import Class.Animales.Crianza;
+import Class.Animales.Gallina;
 import Class.Bodega;
 import Class.Datos;
 import Class.Granja;
 import Class.Granjero;
 import Class.Mercado;
 import Class.plantas.Planta;
+import Jfrom.animales;
 import Jfrom.bodega;
 import Jfrom.tablero;
 import static java.awt.image.ImageObserver.WIDTH;
@@ -23,7 +26,9 @@ import javax.swing.JOptionPane;
  *
  * @author dell
  */
+    // Manejador herada de la clase Thread
 public class ManejadorGranja extends Thread{
+    //atributos
     private Granjero granjero;
     private Granja  granja;
     private Mercado mercado;
@@ -38,7 +43,7 @@ public class ManejadorGranja extends Thread{
         this.bode=bodega;
         this.dato=dato;
     }
-   
+        //metodo para comprar barco 
     public void comprarBarcos(int fila ,int columna){
         
                 if(granjero.getOro()>=500){
@@ -52,6 +57,12 @@ public class ManejadorGranja extends Thread{
             
     }
     
+    public void elimarBarco(int fila, int columna){
+        Icon imagenBarco=new ImageIcon(getClass().getResource("/imagenes/s2.jpg"));
+        granja.getBotones()[fila][columna].setIcon(imagenBarco);
+    
+    }
+   
     public void sembrarFruta(int fila ,int columna){
         
         if(bode.getFrutas()>=10){
@@ -127,6 +138,7 @@ public class ManejadorGranja extends Thread{
         }
         else JOptionPane.showMessageDialog(null, " oro insuficiente  ");
     }
+        //metododo en donde el granjero va perdiendo vida
     public void vidaGranjero() throws InterruptedException{
         while(granjero.getVida() !=0){
             granjero.restarVida(1);
@@ -136,6 +148,26 @@ public class ManejadorGranja extends Thread{
         }
         JOptionPane.showMessageDialog(null, "Lo sentimos el granjero a muerto por lo tanto ya no puede seguir jugando");
         System.exit(WIDTH);
+    }
+    
+        public void destazar(){
+        
+        if(animales.jComboBox1.getSelectedItem().equals("Vaca")){
+            if(dato.getCantidadCriasCompradasVaca()>1){
+                bode.sumarCarne(20);
+                dato.sumardestaceVaca(2);
+               
+            }
+        }
+        
+        else if(animales.jComboBox1.getSelectedItem().equals("Gallina")){
+            if(dato.getCantidadCriasCompradasGallina()>2){
+                bode.sumarCarne(10);
+                dato.sumardestaceGallina(4);
+            }
+            
+        }
+       
     }
     
     
@@ -148,10 +180,5 @@ public class ManejadorGranja extends Thread{
             e.printStackTrace();
         }
     }
-    
-    public void destazar(){
-        bode.sumarCarne(10);
-    }
-    
-    
+     
 }

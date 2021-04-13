@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
  *
  * @author dell
  */
+// esta clase era de suelos 
 public class Grama extends Suelos{
     private int fila;
     private int columna;
@@ -24,10 +25,10 @@ public class Grama extends Suelos{
      public void posicion(int x,int y){
          this.fila=x;
          this.columna=y;
-    //setText((x+1)+"-"+(y+1));
+         
     
     }
-
+     //se sobre escribio los metodos de la clase Jbutton 
     @Override
     public void actionPerformed(ActionEvent e) {
         grama gra=new grama();

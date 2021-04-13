@@ -12,6 +12,7 @@ package Class;
  * @author dell
  */
 public class Granjero {
+    //atributos 
     private String nombre;
     private String nick;
     private int vida;
@@ -24,7 +25,7 @@ public class Granjero {
         this.oro=2000;
        
     }
-
+    //cada atributo tiene su metodo get y set
     public String getNombre() {
         return nombre;
     }

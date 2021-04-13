@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import static javax.swing.text.StyleConstants.setBackground;
 
+    // la clase suelos hereda de la clase Jbutton esta clase es como la clase object 
 public class Suelos  extends JButton  implements ActionListener {
     private TiposSuelos estado;
     

@@ -12,6 +12,7 @@ import Jfrom.bodega;
  * @author dell
  */
 public class Bodega {
+    //atributo
     private int frutas=30;
     private int granos;
     private int piezaCuero;
@@ -21,13 +22,14 @@ public class Bodega {
     private Datos datos;
     private Mercado mercado;
     
+    
     public Bodega(Granjero granjero, Datos datos, Mercado mercado){
         this.granjero=granjero;
         this.datos=datos;
         this.mercado=mercado;
         
     }
-
+    //cada atributo cuenta con su metodo get set
     public int getFrutas() {
         return frutas;
     }
@@ -67,7 +69,7 @@ public class Bodega {
     public void setHuevo(int Huevo) {
         this.Huevo = Huevo;
     }
-    
+        //metodos para sumar y restar atributos 
     public void restarFruta(int cantidad){
         
         this.frutas=this.frutas-cantidad;
@@ -94,6 +96,7 @@ public class Bodega {
     public void sumarHuevos(int cantidad){
         this.Huevo=this.Huevo+cantidad;
     }
+    
     public void consumirAlimentos(){
         if(granjero.getVida()<90 ){
             if(bodega.jComboBox1.getSelectedItem().equals("Frutos") && this.frutas>10){

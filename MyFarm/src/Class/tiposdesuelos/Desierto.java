@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
  *
  * @author dell
  */
+    //en esta clase no se inicializo otra clase 
 public class Desierto extends Suelos{
     private int fila;
     private int columna;
